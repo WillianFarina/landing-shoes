@@ -1,0 +1,198 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.shoe-red {
+  --color-inner: #faa700;
+  --color-outer: #e48d00;
+  --color-accent: #a1173c;
+}
+
+.shoe-blue {
+  --color-inner: #fce4b3;
+  --color-outer: #eac886;
+  --color-accent: #2f4858;
+}
+
+.shoe-black {
+  --color-inner: #6dd5ed;
+  --color-outer: #2193b0;
+  --color-accent: #008951;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.hero {
+  color: #fff;
+  text-align: center;
+  padding: 15em 0;
+  background: #222;
+}
+
+@supports (background-blend-mode: multiply) {
+  .hero {
+    background: url('https://github.com/kevin-powell/shoes/blob/master/img/shoe-3.png?raw=true"'),
+      radial-gradient(#444, #111);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
+}
+
+.spacing > * + * {
+  margin-top: var(--spacer, 2rem);
+}
+
+.container {
+  width: 85%;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.main-title {
+  font-size: 4rem;
+  font-size: clamp(3rem, calc(5vh + 1rem), 4.5rem);
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.btn {
+  display: inline-block;
+  color: var(--color-text, #fff);
+  background: var(--color-accent, blue);
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: transform 250ms ease-in-out, opacity 250ms linear;
+}
+
+.btn:hover,
+.btn:focus {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+section {
+  padding: 7rem 0 0 0;
+}
+
+.featured {
+  background: #eee;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(2.5rem, calc(5vh + 1rem), 4.5rem);
+  line-height: 1.1;
+  color: #17353d;
+  margin-bottom: 5rem;
+}
+
+.rows {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.rows > * {
+  flex-basis: 30%;
+  min-width: 15rem;
+}
+
+.featured-item {
+  display: block;
+  position: relative;
+  transform: scale(0.85);
+  transition: transform 250ms ease-in-out;
+  text-decoration: none;
+  color: #333;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.featured-item:hover,
+.featured-item:focus {
+  transform: scale(1);
+}
+
+.featured-item::after {
+  content: '';
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  padding: 75% 75% 0 0;
+  border-radius: 50%;
+  background: #b67eb1;
+  z-index: -1;
+}
+
+.featured-item span {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.featured-details2 {
+  margin-top: 2rem;
+}
+
+.product-item {
+  background: radial-gradient(
+    var(--color-inner, green),
+    var(--color-outer, violet)
+  );
+  padding: 3em;
+  margin-bottom: 5em;
+  border-radius: 1em;
+}
+
+.product-image {
+  margin: -5em 0 0 0;
+}
+
+.product-title {
+  font-size: 4rem;
+  line-height: 1.2;
+  color: #fff;
+  text-shadow: 0 0 0.2em rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 45em) {
+  .product-image {
+    float: right;
+    width: 50%;
+  }
+
+  .product-title {
+    text-align: center;
+  }
+}
